@@ -5,3 +5,4 @@ flask_wtf
 wtforms
 wtforms.validators
 requests
+gunicorn = 20.1.0
