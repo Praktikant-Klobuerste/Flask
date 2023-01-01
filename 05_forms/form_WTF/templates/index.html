@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}success{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+  <h1>Yoo</h1>
+  <form action="/login" method="post">
+    <label for="username">Name</label>
+    <input type="text" placeholder="name" name="username" id="" />
+    <label for="password">Password</label>
+    <input type="password" placeholder="password" name="password" id="" />
+    <button type="submit">Ok</button>
+  </form>
+</div>
+{% endblock %}

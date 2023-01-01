@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+  Change Rating - {{book.title}}
+{% endblock %}
+
+
+
+
+{% block content %}
+<form action="" method="POST">
+    {{ form.csrf_token }}
+    Book Name: {{book.title}} <br>
+    Current Rating: {{book.rating}} <br>
+    
+
+    {{form.new_rating()}}
+
+    {{form.btn_submit()}}
+    
+
+
+
+    </form>
+  
+
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Blog 🥑
+{% endblock %}
+
+
+
+{% block content %}
+<div class="wrapper">
+    <div class="top">
+        <div class="title"><h1>Niko's Blog 🎈</h1></div>
+    </div>
+
+    {% if blogs %}
+        {% for blog in blogs %}
+        <div class="content">
+            <div class="card">
+                <h2>{{blog.get("title")}}</h2>
+                <p class="text">{{blog.get("subtitle")}}</p>
+                <a href="{{ url_for('blog_post', id = blog['id']) }}">Read</a>
+            </div>
+        </div>
+
+        {%endfor%}
+    {%else%}
+    <div class="content">
+        <div class="card">
+            <h2>No blogs</h2>    
+        </div>
+    </div>
+    {%endif%}
+
+{% endblock%}

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Clean Blog - Start Bootstrap Them
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('static/assets/img/home-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Niko's Blog</h1>
+                            <span class="subheading">A collection of Niko's random musings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+ 
+
+        <!-- Main Content-->
+        <main class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    {% if blog %}
+                        {%for post in blog%}
+                        <!-- Post preview-->
+                        <div class="post-preview">
+                            <p>{{post.id}}</p>
+                                <!-- <a href="{‌{ url_for('post_page', id=post.id) }}"> -->
+                                <a href="{{ url_for('post_page', id = post.id ) }}">
+                                    <h2 class="post-title">
+                                        {{post.title}}
+                                    </h2>
+                                    <h3 class="post-subtitle">
+                                        {{post.subtitle}}
+                                    </h3>
+                                </a>
+                            <p class="post-meta">
+                                Posted by
+                                <a href="#!">Niko</a>
+                                on September 24, 2022
+                            </p>
+                        </div>
+                        <!-- Divider-->
+                        <hr class="my-4" />
+
+                        {%endfor%}
+                    {%else%}
+                    <div class="post-preview">
+                        No Element
+                    </div>
+                    {%endif%}
+
+
+
+
+
+                    <!-- Pager-->
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                </div>
+            </div>
+        </main>
+
+
+        
+
+
+{% endblock %}
