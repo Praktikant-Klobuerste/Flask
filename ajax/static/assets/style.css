@@ -1,0 +1,12 @@
+
+body {
+    text-align: center;
+    height: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* display: flex;
+    align-items: center; */
+}
+
+span{
+    color: red;
+}
